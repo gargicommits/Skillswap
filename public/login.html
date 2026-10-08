@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login — SkillSwap</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <nav id="appNav"></nav>
+  <div class="auth-wrap">
+    <div class="auth-panel">
+      <div class="auth-card">
+        <h1 class="page-title">Welcome back</h1>
+        <p class="page-sub">Log in with Email, Username, or verified ERP ID.</p>
+        <div id="alert" class="alert"></div>
+        <form id="loginForm">
+          <div class="form-group">
+            <label for="identifier">Email, Username, or ERP ID</label>
+            <input id="identifier" name="identifier" required placeholder="anchal@skillswap.dev or ERP202601" />
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password" required minlength="6" placeholder="••••••••" />
+          </div>
+          <button class="btn btn-primary" type="submit" id="submitBtn" style="width:100%">Log in with ERP Verification</button>
+        </form>
+        <p style="margin-top:16px;color:var(--muted)">New here? <a href="/register.html">Create an account</a></p>
+      </div>
+    </div>
+    <aside class="auth-side">
+      <h2>Verified ERP Student Network</h2>
+      <p style="margin-top:8px">Exchange skills safely with verified peer accounts. All demo accounts use password <strong>Password123</strong>.</p>
+      
+      <div style="margin-top:20px;display:flex;flex-direction:column;gap:10px">
+        <button type="button" class="btn btn-secondary btn-sm demo-fill" data-id="anchal@skillswap.dev" style="justify-content:flex-start;text-align:left;background:rgba(255,255,255,0.15);color:white;border-color:rgba(255,255,255,0.3)">
+          🎓 <strong>Anchal Singh</strong> &nbsp;(anchal@skillswap.dev / ERP202601)
+        </button>
+        <button type="button" class="btn btn-secondary btn-sm demo-fill" data-id="gargi@skillswap.dev" style="justify-content:flex-start;text-align:left;background:rgba(255,255,255,0.15);color:white;border-color:rgba(255,255,255,0.3)">
+          🎓 <strong>Gargi Bothara</strong> &nbsp;(gargi@skillswap.dev / ERP202602)
+        </button>
+        <button type="button" class="btn btn-secondary btn-sm demo-fill" data-id="shreya@skillswap.dev" style="justify-content:flex-start;text-align:left;background:rgba(255,255,255,0.15);color:white;border-color:rgba(255,255,255,0.3)">
+          🎓 <strong>Shreya Ashtekar</strong> &nbsp;(shreya@skillswap.dev / ERP202603)
+        </button>
+        <button type="button" class="btn btn-secondary btn-sm demo-fill" data-id="shravani@skillswap.dev" style="justify-content:flex-start;text-align:left;background:rgba(255,255,255,0.15);color:white;border-color:rgba(255,255,255,0.3)">
+          🎓 <strong>Shravani Deshmukh</strong> &nbsp;(shravani@skillswap.dev / ERP202604)
+        </button>
+      </div>
+    </aside>
+  </div>
+  <script src="/js/app.js"></script>
+  <script src="/js/auth.js"></script>
+  <script>
+    document.querySelectorAll('.demo-fill').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.getElementById('identifier').value = btn.dataset.id;
+        document.getElementById('password').value = 'Password123';
+      });
+    });
+  </script>
+</body>
+</html>

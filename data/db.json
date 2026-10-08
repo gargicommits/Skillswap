@@ -1,0 +1,377 @@
+{
+  "users": [
+    {
+      "_id": "95796eb3c27200d949d4ad4c",
+      "createdAt": "2026-10-08T14:13:58.174Z",
+      "updatedAt": "2026-10-08T14:13:58.174Z",
+      "credits": 100,
+      "rating": 4.9,
+      "completedSwaps": 4,
+      "skillsToTeach": [
+        "6dc9797d2848ba90848f4fa2",
+        "3922416bc4306ebafe6d9057",
+        "322b8b6723e0ded062967443",
+        "cfbe24852d292fd66b747904"
+      ],
+      "skillsToLearn": [
+        "66fe07914405fc932dc72794",
+        "7ff615a914bbdabbd8483b6b"
+      ],
+      "bio": "Full-stack developer passionate about web architectures and peer teaching.",
+      "location": "Pune",
+      "profileImage": "https://api.dicebear.com/7.x/adventurer/svg?seed=Anchal%20Singh",
+      "erpId": "ERP202601",
+      "isErpVerified": true,
+      "name": "Anchal Singh",
+      "username": "anchal",
+      "email": "anchal@skillswap.dev",
+      "password": "$2a$10$q36AUurwL8kcg.CLPSUcKOI7RiPBLXAyipeUgEdORtno1Yn8N0uLK"
+    },
+    {
+      "_id": "58de98935a853b9f7d7eca27",
+      "createdAt": "2026-10-08T14:13:58.194Z",
+      "updatedAt": "2026-10-08T14:13:58.194Z",
+      "credits": 100,
+      "rating": 4.9,
+      "completedSwaps": 4,
+      "skillsToTeach": [
+        "66fe07914405fc932dc72794",
+        "e0c4f414d61e4b676a81aed0",
+        "a317d2a79ad36d0379d0c599"
+      ],
+      "skillsToLearn": [
+        "322b8b6723e0ded062967443",
+        "6dc9797d2848ba90848f4fa2"
+      ],
+      "bio": "UI/UX and product designer crafting intuitive digital experiences.",
+      "location": "Mumbai",
+      "profileImage": "https://api.dicebear.com/7.x/adventurer/svg?seed=Gargi%20Bothara",
+      "erpId": "ERP202602",
+      "isErpVerified": true,
+      "name": "Gargi Bothara",
+      "username": "gargi",
+      "email": "gargi@skillswap.dev",
+      "password": "$2a$10$q36AUurwL8kcg.CLPSUcKOI7RiPBLXAyipeUgEdORtno1Yn8N0uLK"
+    },
+    {
+      "_id": "85216d38c230eebd9efe585d",
+      "createdAt": "2026-10-08T14:13:58.212Z",
+      "updatedAt": "2026-10-08T14:13:58.212Z",
+      "credits": 100,
+      "rating": 4.8,
+      "completedSwaps": 3,
+      "skillsToTeach": [
+        "1bbe04bad4455baa721199fe",
+        "481ff88aca9e76d471415cfd",
+        "ba0673be59a850b822aa738e"
+      ],
+      "skillsToLearn": [
+        "3922416bc4306ebafe6d9057",
+        "322b8b6723e0ded062967443"
+      ],
+      "bio": "Data enthusiast and Python developer focused on clean scripts and analytics.",
+      "location": "Bengaluru",
+      "profileImage": "https://api.dicebear.com/7.x/adventurer/svg?seed=Shreya%20Ashtekar",
+      "erpId": "ERP202603",
+      "isErpVerified": true,
+      "name": "Shreya Ashtekar",
+      "username": "shreya",
+      "email": "shreya@skillswap.dev",
+      "password": "$2a$10$q36AUurwL8kcg.CLPSUcKOI7RiPBLXAyipeUgEdORtno1Yn8N0uLK"
+    },
+    {
+      "_id": "112102aa86a6d607029ff1a9",
+      "createdAt": "2026-10-08T14:13:58.235Z",
+      "updatedAt": "2026-10-08T14:13:58.235Z",
+      "credits": 100,
+      "rating": 4.7,
+      "completedSwaps": 2,
+      "skillsToTeach": [
+        "7ff615a914bbdabbd8483b6b",
+        "94748791fb1d936bb53ea2df",
+        "10b4df014eac34896c8ae599"
+      ],
+      "skillsToLearn": [
+        "1bbe04bad4455baa721199fe",
+        "42f89b9ab9d15cf844266405"
+      ],
+      "bio": "Digital marketer and creative strategist specializing in growth and public speaking.",
+      "location": "Delhi",
+      "profileImage": "https://api.dicebear.com/7.x/adventurer/svg?seed=Shravani%20Deshmukh",
+      "erpId": "ERP202604",
+      "isErpVerified": true,
+      "name": "Shravani Deshmukh",
+      "username": "shravani",
+      "email": "shravani@skillswap.dev",
+      "password": "$2a$10$q36AUurwL8kcg.CLPSUcKOI7RiPBLXAyipeUgEdORtno1Yn8N0uLK"
+    }
+  ],
+  "skills": [
+    {
+      "_id": "3922416bc4306ebafe6d9057",
+      "createdAt": "2026-10-08T14:13:58.064Z",
+      "updatedAt": "2026-10-08T14:13:58.064Z",
+      "icon": "🟨",
+      "description": "Build interactive web apps with modern JS.",
+      "name": "JavaScript",
+      "category": "Technology"
+    },
+    {
+      "_id": "1bbe04bad4455baa721199fe",
+      "createdAt": "2026-10-08T14:13:58.065Z",
+      "updatedAt": "2026-10-08T14:13:58.065Z",
+      "icon": "🐍",
+      "description": "Data, automation, and backend development.",
+      "name": "Python",
+      "category": "Technology"
+    },
+    {
+      "_id": "ba0673be59a850b822aa738e",
+      "createdAt": "2026-10-08T14:13:58.065Z",
+      "updatedAt": "2026-10-08T14:13:58.065Z",
+      "icon": "☕",
+      "description": "Object-oriented programming and enterprise apps.",
+      "name": "Java",
+      "category": "Technology"
+    },
+    {
+      "_id": "322b8b6723e0ded062967443",
+      "createdAt": "2026-10-08T14:13:58.065Z",
+      "updatedAt": "2026-10-08T14:13:58.065Z",
+      "icon": "⚛️",
+      "description": "Component-driven user interfaces.",
+      "name": "React",
+      "category": "Technology"
+    },
+    {
+      "_id": "cfbe24852d292fd66b747904",
+      "createdAt": "2026-10-08T14:13:58.065Z",
+      "updatedAt": "2026-10-08T14:13:58.065Z",
+      "icon": "🟢",
+      "description": "Server-side JavaScript and APIs.",
+      "name": "Node.js",
+      "category": "Technology"
+    },
+    {
+      "_id": "6dc9797d2848ba90848f4fa2",
+      "createdAt": "2026-10-08T14:13:58.065Z",
+      "updatedAt": "2026-10-08T14:13:58.065Z",
+      "icon": "💻",
+      "description": "HTML, CSS, and full-stack websites.",
+      "name": "Web Development",
+      "category": "Technology"
+    },
+    {
+      "_id": "e0c4f414d61e4b676a81aed0",
+      "createdAt": "2026-10-08T14:13:58.065Z",
+      "updatedAt": "2026-10-08T14:13:58.065Z",
+      "icon": "🎨",
+      "description": "Visual identity, layouts, and branding.",
+      "name": "Graphic Design",
+      "category": "Design"
+    },
+    {
+      "_id": "66fe07914405fc932dc72794",
+      "createdAt": "2026-10-08T14:13:58.065Z",
+      "updatedAt": "2026-10-08T14:13:58.065Z",
+      "icon": "🧩",
+      "description": "Product design, wireframes, and research.",
+      "name": "UI/UX",
+      "category": "Design"
+    },
+    {
+      "_id": "a317d2a79ad36d0379d0c599",
+      "createdAt": "2026-10-08T14:13:58.066Z",
+      "updatedAt": "2026-10-08T14:13:58.066Z",
+      "icon": "🖼️",
+      "description": "Photo editing and digital compositing.",
+      "name": "Photoshop",
+      "category": "Design"
+    },
+    {
+      "_id": "42f89b9ab9d15cf844266405",
+      "createdAt": "2026-10-08T14:13:58.066Z",
+      "updatedAt": "2026-10-08T14:13:58.066Z",
+      "icon": "🎬",
+      "description": "Storytelling with Premiere, CapCut, or DaVinci.",
+      "name": "Video Editing",
+      "category": "Design"
+    },
+    {
+      "_id": "10b4df014eac34896c8ae599",
+      "createdAt": "2026-10-08T14:13:58.066Z",
+      "updatedAt": "2026-10-08T14:13:58.066Z",
+      "icon": "📣",
+      "description": "Campaigns, growth, and brand strategy.",
+      "name": "Marketing",
+      "category": "Business"
+    },
+    {
+      "_id": "e3190637235336890f81c6ab",
+      "createdAt": "2026-10-08T14:13:58.066Z",
+      "updatedAt": "2026-10-08T14:13:58.066Z",
+      "icon": "🚀",
+      "description": "Starting and scaling a business.",
+      "name": "Entrepreneurship",
+      "category": "Business"
+    },
+    {
+      "_id": "481ff88aca9e76d471415cfd",
+      "createdAt": "2026-10-08T14:13:58.066Z",
+      "updatedAt": "2026-10-08T14:13:58.066Z",
+      "icon": "📊",
+      "description": "Spreadsheets, formulas, and dashboards.",
+      "name": "Excel",
+      "category": "Business"
+    },
+    {
+      "_id": "7ff615a914bbdabbd8483b6b",
+      "createdAt": "2026-10-08T14:13:58.066Z",
+      "updatedAt": "2026-10-08T14:13:58.066Z",
+      "icon": "🎤",
+      "description": "Presentations, confidence, and storytelling.",
+      "name": "Public Speaking",
+      "category": "Business"
+    },
+    {
+      "_id": "fc63a5a1d45564cdb7fb0ff2",
+      "createdAt": "2026-10-08T14:13:58.066Z",
+      "updatedAt": "2026-10-08T14:13:58.066Z",
+      "icon": "📷",
+      "description": "Portraits, lighting, and composition.",
+      "name": "Photography",
+      "category": "Creative"
+    },
+    {
+      "_id": "dede1313a7832be87ea20eb8",
+      "createdAt": "2026-10-08T14:13:58.066Z",
+      "updatedAt": "2026-10-08T14:13:58.066Z",
+      "icon": "🎵",
+      "description": "Instruments, production, or music theory.",
+      "name": "Music",
+      "category": "Creative"
+    },
+    {
+      "_id": "e7818d2492c3eb7eac9e6ea2",
+      "createdAt": "2026-10-08T14:13:58.066Z",
+      "updatedAt": "2026-10-08T14:13:58.066Z",
+      "icon": "✏️",
+      "description": "Sketching, illustration, and visual art.",
+      "name": "Drawing",
+      "category": "Creative"
+    },
+    {
+      "_id": "50ae70ec65165e6c5fdf3299",
+      "createdAt": "2026-10-08T14:13:58.066Z",
+      "updatedAt": "2026-10-08T14:13:58.066Z",
+      "icon": "✍️",
+      "description": "Copywriting, storytelling, and editing.",
+      "name": "Writing",
+      "category": "Creative"
+    },
+    {
+      "_id": "94748791fb1d936bb53ea2df",
+      "createdAt": "2026-10-08T14:13:58.066Z",
+      "updatedAt": "2026-10-08T14:13:58.066Z",
+      "icon": "📈",
+      "description": "SEO, ads, and content marketing.",
+      "name": "Digital Marketing",
+      "category": "Business"
+    }
+  ],
+  "swaps": [
+    {
+      "_id": "acf6b920bac2f77ad1b1cc86",
+      "createdAt": "2026-10-08T14:13:58.257Z",
+      "updatedAt": "2026-10-08T14:13:58.257Z",
+      "status": "accepted",
+      "message": "Happy to swap React/web fundamentals for a UX design portfolio review.",
+      "sender": "95796eb3c27200d949d4ad4c",
+      "receiver": "58de98935a853b9f7d7eca27",
+      "skillOffered": "6dc9797d2848ba90848f4fa2",
+      "skillWanted": "66fe07914405fc932dc72794"
+    },
+    {
+      "_id": "022392fdd4324858c0322944",
+      "createdAt": "2026-10-08T14:13:58.268Z",
+      "updatedAt": "2026-10-08T14:13:58.268Z",
+      "status": "pending",
+      "message": "I can walk you through Python data structures if you help me with JavaScript.",
+      "sender": "85216d38c230eebd9efe585d",
+      "receiver": "95796eb3c27200d949d4ad4c",
+      "skillOffered": "1bbe04bad4455baa721199fe",
+      "skillWanted": "3922416bc4306ebafe6d9057"
+    },
+    {
+      "_id": "fac20e1f22190dd4dc562222",
+      "createdAt": "2026-10-08T14:13:58.279Z",
+      "updatedAt": "2026-10-08T14:13:58.279Z",
+      "status": "pending",
+      "message": "Would love a branding session in exchange for growth marketing strategy.",
+      "sender": "112102aa86a6d607029ff1a9",
+      "receiver": "58de98935a853b9f7d7eca27",
+      "skillOffered": "94748791fb1d936bb53ea2df",
+      "skillWanted": "e0c4f414d61e4b676a81aed0"
+    }
+  ],
+  "messages": [
+    {
+      "_id": "9e39fe2ba82a4e841906c465",
+      "createdAt": "2026-10-08T14:13:58.292Z",
+      "updatedAt": "2026-10-08T14:41:25.858Z",
+      "read": true,
+      "sender": "95796eb3c27200d949d4ad4c",
+      "receiver": "58de98935a853b9f7d7eca27",
+      "text": "Hey Gargi! Excited to swap web development and UI/UX skills this week.",
+      "timestamp": "2026-10-08T13:13:58.291Z"
+    },
+    {
+      "_id": "1add2ccec18ca7c919d4623f",
+      "createdAt": "2026-10-08T14:13:58.307Z",
+      "updatedAt": "2026-10-08T14:13:58.307Z",
+      "read": false,
+      "sender": "58de98935a853b9f7d7eca27",
+      "receiver": "95796eb3c27200d949d4ad4c",
+      "text": "Hey Anchal! Sounds great — let us review the user interface and components on Thursday.",
+      "timestamp": "2026-10-08T13:33:58.306Z"
+    }
+  ],
+  "transactions": [
+    {
+      "_id": "1e0619039f90a7ef126421d6",
+      "createdAt": "2026-10-08T14:13:58.185Z",
+      "updatedAt": "2026-10-08T14:13:58.185Z",
+      "user": "95796eb3c27200d949d4ad4c",
+      "amount": 100,
+      "type": "welcome_bonus",
+      "description": "Welcome bonus (ERP Verified Account)"
+    },
+    {
+      "_id": "e095b2496da48db91002e520",
+      "createdAt": "2026-10-08T14:13:58.203Z",
+      "updatedAt": "2026-10-08T14:13:58.203Z",
+      "user": "58de98935a853b9f7d7eca27",
+      "amount": 100,
+      "type": "welcome_bonus",
+      "description": "Welcome bonus (ERP Verified Account)"
+    },
+    {
+      "_id": "8052bab6f92df101b18e7d11",
+      "createdAt": "2026-10-08T14:13:58.225Z",
+      "updatedAt": "2026-10-08T14:13:58.225Z",
+      "user": "85216d38c230eebd9efe585d",
+      "amount": 100,
+      "type": "welcome_bonus",
+      "description": "Welcome bonus (ERP Verified Account)"
+    },
+    {
+      "_id": "6732980419efc8b90507e892",
+      "createdAt": "2026-10-08T14:13:58.246Z",
+      "updatedAt": "2026-10-08T14:13:58.246Z",
+      "user": "112102aa86a6d607029ff1a9",
+      "amount": 100,
+      "type": "welcome_bonus",
+      "description": "Welcome bonus (ERP Verified Account)"
+    }
+  ]
+}

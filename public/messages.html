@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Messages — SkillSwap</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <nav id="appNav"></nav>
+  <main class="page">
+    <h1 class="page-title">Messages</h1>
+    <p class="page-sub">Chat with people after a swap is accepted.</p>
+    <section class="card chat-layout" id="chatRoot">
+      <div class="convos" id="convos"><div class="loading">Loading conversations...</div></div>
+      <div class="chat-window">
+        <div class="chat-head" id="chatHead">Select a conversation</div>
+        <div class="chat-log" id="chatLog"></div>
+        <form class="chat-input" id="chatForm">
+          <input id="chatText" placeholder="Type your message..." autocomplete="off" />
+          <button class="btn btn-primary" type="submit" id="sendBtn">Send</button>
+        </form>
+      </div>
+    </section>
+  </main>
+  <script src="/js/app.js"></script>
+  <script src="/js/messages.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard — SkillSwap</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <nav id="appNav"></nav>
+  <main class="page">
+    <h1 class="page-title" id="welcome">Welcome back</h1>
+    <p class="page-sub">Your matches, credits, and activity in one place.</p>
+    <section class="card credit-hero" id="creditHero">
+      <div>
+        <div class="kicker" style="color:#ddd6fe">Balance</div>
+        <h2>💎 0 Skill Credits</h2>
+      </div>
+      <a class="btn" href="/wallet.html" style="background:white;color:var(--primary)">Open wallet</a>
+    </section>
+    <div class="stat-grid" id="stats"></div>
+    <h2>Recommended matches</h2>
+    <p class="page-sub">People whose teaching skills match what you want to learn.</p>
+    <div id="matches" class="grid-auto"><div class="loading">Loading matches...</div></div>
+  </main>
+  <script src="/js/app.js"></script>
+  <script src="/js/dashboard.js"></script>
+</body>
+</html>
