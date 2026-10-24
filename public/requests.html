@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="/images/favicon.png" />
+  <title>Requests — SkillSwap</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <nav id="appNav"></nav>
+  <main class="page">
+    <h1 class="page-title">Swap requests</h1>
+    <div class="tabs">
+      <button class="tab active" data-tab="received">Received</button>
+      <button class="tab" data-tab="sent">Sent</button>
+    </div>
+    <div id="alert" class="alert"></div>
+    <div id="list"><div class="loading">Loading requests...</div></div>
+  </main>
+  <script src="/js/app.js"></script>
+  <script src="/js/requests.js"></script>
+</body>
+</html>

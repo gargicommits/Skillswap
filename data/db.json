@@ -1,0 +1,402 @@
+{
+  "users": [
+    {
+      "_id": "95796eb3c27200d949d4ad4c",
+      "createdAt": "2026-10-08T14:13:58.174Z",
+      "updatedAt": "2026-10-24T03:29:44.066Z",
+      "credits": 105,
+      "rating": 4.95,
+      "completedSwaps": 5,
+      "skillsToTeach": [
+        "3922416bc4306ebafe6d9057",
+        "e0c4f414d61e4b676a81aed0",
+        "a317d2a79ad36d0379d0c599",
+        "10b4df014eac34896c8ae599"
+      ],
+      "skillsToLearn": [
+        "1bbe04bad4455baa721199fe",
+        "6dc9797d2848ba90848f4fa2"
+      ],
+      "bio": "Strong in maths and programming, happy to help peers with Sem 1 and Sem 2 topics.",
+      "location": "Pune",
+      "profileImage": "https://api.dicebear.com/7.x/adventurer/svg?seed=Anchal%20Singh",
+      "erpId": "ERP202601",
+      "isErpVerified": true,
+      "name": "Anchal Singh",
+      "username": "anchal",
+      "email": "anchal@skillswap.dev",
+      "password": "$2a$10$q36AUurwL8kcg.CLPSUcKOI7RiPBLXAyipeUgEdORtno1Yn8N0uLK"
+    },
+    {
+      "_id": "58de98935a853b9f7d7eca27",
+      "createdAt": "2026-10-08T14:13:58.194Z",
+      "updatedAt": "2026-10-24T03:29:44.083Z",
+      "credits": 105,
+      "rating": 4.95,
+      "completedSwaps": 5,
+      "skillsToTeach": [
+        "6dc9797d2848ba90848f4fa2",
+        "481ff88aca9e76d471415cfd",
+        "66fe07914405fc932dc72794"
+      ],
+      "skillsToLearn": [
+        "3922416bc4306ebafe6d9057",
+        "322b8b6723e0ded062967443"
+      ],
+      "bio": "Love design and creativity — can teach graphics and design thinking to anyone!",
+      "location": "Mumbai",
+      "profileImage": "https://api.dicebear.com/7.x/adventurer/svg?seed=Gargi%20Bothara",
+      "erpId": "ERP202602",
+      "isErpVerified": true,
+      "name": "Gargi Bothara",
+      "username": "gargi",
+      "email": "gargi@skillswap.dev",
+      "password": "$2a$10$q36AUurwL8kcg.CLPSUcKOI7RiPBLXAyipeUgEdORtno1Yn8N0uLK"
+    },
+    {
+      "_id": "85216d38c230eebd9efe585d",
+      "createdAt": "2026-10-08T14:13:58.212Z",
+      "updatedAt": "2026-10-08T14:13:58.212Z",
+      "credits": 100,
+      "rating": 4.8,
+      "completedSwaps": 3,
+      "skillsToTeach": [
+        "1bbe04bad4455baa721199fe",
+        "ba0673be59a850b822aa738e",
+        "42f89b9ab9d15cf844266405"
+      ],
+      "skillsToLearn": [
+        "e0c4f414d61e4b676a81aed0",
+        "10b4df014eac34896c8ae599"
+      ],
+      "bio": "Physics and chemistry nerd — always excited to explain tricky concepts.",
+      "location": "Bengaluru",
+      "profileImage": "https://api.dicebear.com/7.x/adventurer/svg?seed=Shreya%20Ashtekar",
+      "erpId": "ERP202603",
+      "isErpVerified": true,
+      "name": "Shreya Ashtekar",
+      "username": "shreya",
+      "email": "shreya@skillswap.dev",
+      "password": "$2a$10$q36AUurwL8kcg.CLPSUcKOI7RiPBLXAyipeUgEdORtno1Yn8N0uLK"
+    },
+    {
+      "_id": "112102aa86a6d607029ff1a9",
+      "createdAt": "2026-10-08T14:13:58.235Z",
+      "updatedAt": "2026-10-08T14:13:58.235Z",
+      "credits": 100,
+      "rating": 4.7,
+      "completedSwaps": 2,
+      "skillsToTeach": [
+        "322b8b6723e0ded062967443",
+        "cfbe24852d292fd66b747904",
+        "e3190637235336890f81c6ab"
+      ],
+      "skillsToLearn": [
+        "a317d2a79ad36d0379d0c599",
+        "ba0673be59a850b822aa738e"
+      ],
+      "bio": "Electrical and electronics geek who loves hands-on workshop practice.",
+      "location": "Delhi",
+      "profileImage": "https://api.dicebear.com/7.x/adventurer/svg?seed=Shravani%20Deshmukh",
+      "erpId": "ERP202604",
+      "isErpVerified": true,
+      "name": "Shravani Deshmukh",
+      "username": "shravani",
+      "email": "shravani@skillswap.dev",
+      "password": "$2a$10$q36AUurwL8kcg.CLPSUcKOI7RiPBLXAyipeUgEdORtno1Yn8N0uLK"
+    }
+  ],
+  "skills": [
+    {
+      "_id": "3922416bc4306ebafe6d9057",
+      "createdAt": "2026-10-23T00:00:00.000Z",
+      "updatedAt": "2026-10-23T00:00:00.000Z",
+      "icon": "📐",
+      "description": "Differential calculus, Taylor and Maclaurin series, partial differentiation, complex numbers, and matrices.",
+      "name": "Engineering Mathematics-I",
+      "category": "Semester 1"
+    },
+    {
+      "_id": "1bbe04bad4455baa721199fe",
+      "createdAt": "2026-10-23T00:00:00.000Z",
+      "updatedAt": "2026-10-23T00:00:00.000Z",
+      "icon": "⚛️",
+      "description": "Interference, diffraction, lasers, fiber optics, quantum mechanics, and semiconductor physics.",
+      "name": "Engineering Physics",
+      "category": "Semester 1"
+    },
+    {
+      "_id": "ba0673be59a850b822aa738e",
+      "createdAt": "2026-10-23T00:00:00.000Z",
+      "updatedAt": "2026-10-23T00:00:00.000Z",
+      "icon": "🧪",
+      "description": "Water chemistry, polymers, electrochemistry, corrosion, fuels, and spectroscopy.",
+      "name": "Engineering Chemistry",
+      "category": "Semester 1"
+    },
+    {
+      "_id": "322b8b6723e0ded062967443",
+      "createdAt": "2026-10-23T00:00:00.000Z",
+      "updatedAt": "2026-10-23T00:00:00.000Z",
+      "icon": "⚡",
+      "description": "DC and AC circuits, network theorems, transformers, electrical machines, and safety.",
+      "name": "Basic Electrical Engineering",
+      "category": "Semester 1"
+    },
+    {
+      "_id": "cfbe24852d292fd66b747904",
+      "createdAt": "2026-10-23T00:00:00.000Z",
+      "updatedAt": "2026-10-23T00:00:00.000Z",
+      "icon": "🔌",
+      "description": "Diodes, transistors, operational amplifiers, logic gates, and number systems.",
+      "name": "Basic Electronics Engineering",
+      "category": "Semester 1"
+    },
+    {
+      "_id": "6dc9797d2848ba90848f4fa2",
+      "createdAt": "2026-10-23T00:00:00.000Z",
+      "updatedAt": "2026-10-23T00:00:00.000Z",
+      "icon": "📏",
+      "description": "Orthographic projections, projections of solids, sections, and isometric views.",
+      "name": "Engineering Graphics",
+      "category": "Semester 1"
+    },
+    {
+      "_id": "e0c4f414d61e4b676a81aed0",
+      "createdAt": "2026-10-23T00:00:00.000Z",
+      "updatedAt": "2026-10-23T00:00:00.000Z",
+      "icon": "💻",
+      "description": "C programming, control flow, arrays, functions, pointers, structures, and files.",
+      "name": "Fundamentals of Programming Languages",
+      "category": "Semester 1"
+    },
+    {
+      "_id": "66fe07914405fc932dc72794",
+      "createdAt": "2026-10-23T00:00:00.000Z",
+      "updatedAt": "2026-10-23T00:00:00.000Z",
+      "icon": "🗣️",
+      "description": "Technical writing, presentations, group discussions, listening, and professional correspondence.",
+      "name": "Professional Communication Skills",
+      "category": "Semester 1"
+    },
+    {
+      "_id": "a317d2a79ad36d0379d0c599",
+      "createdAt": "2026-10-23T00:00:00.000Z",
+      "updatedAt": "2026-10-23T00:00:00.000Z",
+      "icon": "🔢",
+      "description": "Integral calculus, differential equations, Laplace transforms, and Fourier series.",
+      "name": "Engineering Mathematics-II",
+      "category": "Semester 2"
+    },
+    {
+      "_id": "42f89b9ab9d15cf844266405",
+      "createdAt": "2026-10-23T00:00:00.000Z",
+      "updatedAt": "2026-10-23T00:00:00.000Z",
+      "icon": "⚙️",
+      "description": "Force systems, equilibrium, friction, centroid, moment of inertia, kinematics, and kinetics.",
+      "name": "Engineering Mechanics",
+      "category": "Semester 2"
+    },
+    {
+      "_id": "10b4df014eac34896c8ae599",
+      "createdAt": "2026-10-23T00:00:00.000Z",
+      "updatedAt": "2026-10-23T00:00:00.000Z",
+      "icon": "🖥️",
+      "description": "C/C++, object-oriented concepts, data structures, searching, and sorting.",
+      "name": "Programming and Problem Solving",
+      "category": "Semester 2"
+    },
+    {
+      "_id": "e3190637235336890f81c6ab",
+      "createdAt": "2026-10-23T00:00:00.000Z",
+      "updatedAt": "2026-10-23T00:00:00.000Z",
+      "icon": "🔧",
+      "description": "Fitting, carpentry, welding, sheet metal, smithy, plumbing, and manufacturing practice.",
+      "name": "Manufacturing Practice Workshop",
+      "category": "Semester 2"
+    },
+    {
+      "_id": "481ff88aca9e76d471415cfd",
+      "createdAt": "2026-10-23T00:00:00.000Z",
+      "updatedAt": "2026-10-23T00:00:00.000Z",
+      "icon": "💡",
+      "description": "Empathize, define, ideate, prototype, test, innovation, and project-based learning.",
+      "name": "Design Thinking & Idea Lab",
+      "category": "Semester 2"
+    },
+    {
+      "_id": "7ff615a914bbdabbd8483b6b",
+      "createdAt": "2026-10-23T00:00:00.000Z",
+      "updatedAt": "2026-10-23T00:00:00.000Z",
+      "icon": "📜",
+      "description": "Indian contributions to science, mathematics, astronomy, metallurgy, and architecture.",
+      "name": "Indian Knowledge System",
+      "category": "Semester 2"
+    },
+    {
+      "_id": "fc63a5a1d45564cdb7fb0ff2",
+      "createdAt": "2026-10-23T00:00:00.000Z",
+      "updatedAt": "2026-10-23T00:00:00.000Z",
+      "icon": "🎯",
+      "description": "Sports, culture, community service, NSS, and holistic skill development.",
+      "name": "Co-Curricular Courses",
+      "category": "Semester 2"
+    }
+  ],
+  "swaps": [
+    {
+      "_id": "acf6b920bac2f77ad1b1cc86",
+      "createdAt": "2026-10-08T14:13:58.257Z",
+      "updatedAt": "2026-10-24T03:29:44.120Z",
+      "status": "completed",
+      "message": "Happy to walk you through calculus and matrices if you help me with projection drawings.",
+      "sender": "95796eb3c27200d949d4ad4c",
+      "receiver": "58de98935a853b9f7d7eca27",
+      "skillOffered": "3922416bc4306ebafe6d9057",
+      "skillWanted": "6dc9797d2848ba90848f4fa2",
+      "completedAt": "2026-10-24T03:29:44.120Z"
+    },
+    {
+      "_id": "022392fdd4324858c0322944",
+      "createdAt": "2026-10-08T14:13:58.268Z",
+      "updatedAt": "2026-10-23T17:23:59.559Z",
+      "status": "accepted",
+      "message": "I can explain optics and quantum mechanics if you help me with C programming.",
+      "sender": "85216d38c230eebd9efe585d",
+      "receiver": "95796eb3c27200d949d4ad4c",
+      "skillOffered": "1bbe04bad4455baa721199fe",
+      "skillWanted": "e0c4f414d61e4b676a81aed0"
+    },
+    {
+      "_id": "fac20e1f22190dd4dc562222",
+      "createdAt": "2026-10-08T14:13:58.279Z",
+      "updatedAt": "2026-10-08T14:13:58.279Z",
+      "status": "pending",
+      "message": "Would love a design thinking session in exchange for circuit analysis help.",
+      "sender": "112102aa86a6d607029ff1a9",
+      "receiver": "58de98935a853b9f7d7eca27",
+      "skillOffered": "322b8b6723e0ded062967443",
+      "skillWanted": "481ff88aca9e76d471415cfd"
+    }
+  ],
+  "messages": [
+    {
+      "_id": "9e39fe2ba82a4e841906c465",
+      "createdAt": "2026-10-08T14:13:58.292Z",
+      "updatedAt": "2026-10-08T14:41:25.858Z",
+      "read": true,
+      "sender": "95796eb3c27200d949d4ad4c",
+      "receiver": "58de98935a853b9f7d7eca27",
+      "text": "Hey Gargi! Excited to swap Engineering Maths-I and Engineering Graphics this week.",
+      "timestamp": "2026-10-08T13:13:58.291Z"
+    },
+    {
+      "_id": "1add2ccec18ca7c919d4623f",
+      "createdAt": "2026-10-08T14:13:58.307Z",
+      "updatedAt": "2026-10-23T11:39:42.11Z",
+      "read": true,
+      "sender": "58de98935a853b9f7d7eca27",
+      "receiver": "95796eb3c27200d949d4ad4c",
+      "text": "Hey Anchal! Sounds great — let us go over projections and isometric views on Thursday.",
+      "timestamp": "2026-10-08T13:33:58.306Z"
+    }
+  ],
+  "transactions": [
+    {
+      "_id": "1e0619039f90a7ef126421d6",
+      "createdAt": "2026-10-08T14:13:58.185Z",
+      "updatedAt": "2026-10-08T14:13:58.185Z",
+      "user": "95796eb3c27200d949d4ad4c",
+      "amount": 100,
+      "type": "welcome_bonus",
+      "description": "Welcome bonus (ERP Verified Account)"
+    },
+    {
+      "_id": "e095b2496da48db91002e520",
+      "createdAt": "2026-10-08T14:13:58.203Z",
+      "updatedAt": "2026-10-08T14:13:58.203Z",
+      "user": "58de98935a853b9f7d7eca27",
+      "amount": 100,
+      "type": "welcome_bonus",
+      "description": "Welcome bonus (ERP Verified Account)"
+    },
+    {
+      "_id": "8052bab6f92df101b18e7d11",
+      "createdAt": "2026-10-08T14:13:58.225Z",
+      "updatedAt": "2026-10-08T14:13:58.225Z",
+      "user": "85216d38c230eebd9efe585d",
+      "amount": 100,
+      "type": "welcome_bonus",
+      "description": "Welcome bonus (ERP Verified Account)"
+    },
+    {
+      "_id": "6732980419efc8b90507e892",
+      "createdAt": "2026-10-08T14:13:58.246Z",
+      "updatedAt": "2026-10-08T14:13:58.246Z",
+      "user": "112102aa86a6d607029ff1a9",
+      "amount": 100,
+      "type": "welcome_bonus",
+      "description": "Welcome bonus (ERP Verified Account)"
+    },
+    {
+      "_id": "1850eb98dccccfd44415db78",
+      "createdAt": "2026-10-24T03:29:44.103Z",
+      "updatedAt": "2026-10-24T03:29:44.103Z",
+      "user": "95796eb3c27200d949d4ad4c",
+      "amount": -10,
+      "type": "learning_cost",
+      "description": "Learning session",
+      "relatedUser": "58de98935a853b9f7d7eca27"
+    },
+    {
+      "_id": "09cb0a3e3365b71d9c9b9ebc",
+      "createdAt": "2026-10-24T03:29:44.103Z",
+      "updatedAt": "2026-10-24T03:29:44.103Z",
+      "user": "95796eb3c27200d949d4ad4c",
+      "amount": 10,
+      "type": "teaching_reward",
+      "description": "Teaching session",
+      "relatedUser": "58de98935a853b9f7d7eca27"
+    },
+    {
+      "_id": "5aa1e8e0447d0934890d3051",
+      "createdAt": "2026-10-24T03:29:44.103Z",
+      "updatedAt": "2026-10-24T03:29:44.103Z",
+      "user": "95796eb3c27200d949d4ad4c",
+      "amount": 5,
+      "type": "swap_reward",
+      "description": "Successful swap completion",
+      "relatedUser": "58de98935a853b9f7d7eca27"
+    },
+    {
+      "_id": "97fe00e1326cc39b20dec16b",
+      "createdAt": "2026-10-24T03:29:44.103Z",
+      "updatedAt": "2026-10-24T03:29:44.103Z",
+      "user": "58de98935a853b9f7d7eca27",
+      "amount": -10,
+      "type": "learning_cost",
+      "description": "Learning session",
+      "relatedUser": "95796eb3c27200d949d4ad4c"
+    },
+    {
+      "_id": "0c480fd4fd546d87f809cbd4",
+      "createdAt": "2026-10-24T03:29:44.104Z",
+      "updatedAt": "2026-10-24T03:29:44.104Z",
+      "user": "58de98935a853b9f7d7eca27",
+      "amount": 10,
+      "type": "teaching_reward",
+      "description": "Teaching session",
+      "relatedUser": "95796eb3c27200d949d4ad4c"
+    },
+    {
+      "_id": "5138d16996b783e79da58694",
+      "createdAt": "2026-10-24T03:29:44.104Z",
+      "updatedAt": "2026-10-24T03:29:44.104Z",
+      "user": "58de98935a853b9f7d7eca27",
+      "amount": 5,
+      "type": "swap_reward",
+      "description": "Successful swap completion",
+      "relatedUser": "95796eb3c27200d949d4ad4c"
+    }
+  ]
+}

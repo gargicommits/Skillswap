@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="/images/favicon.png" />
+  <title>Login — SkillSwap</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <nav id="appNav"></nav>
+  <main class="auth-wrap login-wrap">
+    <div class="auth-panel">
+      <div class="auth-card login-card">
+        <div class="kicker">Your next exchange is waiting</div>
+        <h1 class="page-title">Welcome<br><em>back.</em></h1>
+        <p class="page-sub">Sign in to pick up where your learning left off.</p>
+        <div id="alert" class="alert"></div>
+        <form id="loginForm">
+          <div class="form-group">
+            <label for="identifier">Email, username, or ERP ID</label>
+            <input id="identifier" name="identifier" autocomplete="username" required placeholder="you@example.com" />
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password" autocomplete="current-password" required minlength="6" placeholder="Enter your password" />
+          </div>
+          <button class="btn btn-primary login-submit" type="submit" id="submitBtn">Log in <span aria-hidden="true">↗</span></button>
+        </form>
+        <p class="login-signup">New to SkillSwap? <a href="/register.html">Create an account</a></p>
+      </div>
+    </div>
+    <aside class="auth-side login-side">
+      <div class="login-side-content">
+      <div class="kicker">Learn from one another</div>
+      <h2>What you know<br>can take someone<br><em>somewhere new.</em></h2>
+      <p class="login-side-lede">A trusted student community where every exchange starts with a little curiosity.</p>
+      <div class="demo-label">Try a demo account <span>· Password123</span></div>
+      
+      <div class="demo-list">
+        <button type="button" class="demo-fill" data-id="anchal@skillswap.dev">
+          <span class="demo-avatar">AS</span><span><strong>Anchal Singh</strong><small>ERP202601</small></span><b aria-hidden="true">↗</b>
+        </button>
+        <button type="button" class="demo-fill" data-id="gargi@skillswap.dev">
+          <span class="demo-avatar">GB</span><span><strong>Gargi Bothara</strong><small>ERP202602</small></span><b aria-hidden="true">↗</b>
+        </button>
+        <button type="button" class="demo-fill" data-id="shreya@skillswap.dev">
+          <span class="demo-avatar">SA</span><span><strong>Shreya Ashtekar</strong><small>ERP202603</small></span><b aria-hidden="true">↗</b>
+        </button>
+        <button type="button" class="demo-fill" data-id="shravani@skillswap.dev">
+          <span class="demo-avatar">SD</span><span><strong>Shravani Deshmukh</strong><small>ERP202604</small></span><b aria-hidden="true">↗</b>
+        </button>
+      </div>
+      <p class="verification-note">Student accounts are verified to help keep exchanges in the community.</p>
+      </div>
+    </aside>
+  </main>
+  <script src="/js/app.js"></script>
+  <script src="/js/auth.js"></script>
+  <script>
+    document.querySelectorAll('.demo-fill').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.getElementById('identifier').value = btn.dataset.id;
+        document.getElementById('password').value = 'Password123';
+      });
+    });
+  </script>
+</body>
+</html>
