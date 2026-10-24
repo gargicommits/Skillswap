@@ -3,58 +3,65 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="/images/favicon.png" />
   <title>SkillSwap — Learn. Teach. Swap Skills.</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/css/style.css" />
 </head>
 <body>
   <nav id="appNav"></nav>
-  <section class="hero">
-    <div>
-      <div class="kicker">Peer learning, reimagined</div>
-      <h1>Learn. Teach. Swap Skills.</h1>
-      <p>SkillSwap connects people who want to learn new skills with people who are ready to teach them.</p>
+  <main>
+  <section class="hero landing-hero">
+    <div class="hero-copy">
+      <div class="kicker"><span class="kicker-dot"></span> A community built on giving back</div>
+      <h1>Good things grow<br>when we <em>share.</em></h1>
+      <p class="hero-lede">Trade what you know for what you want to learn. Meet your people, build real skills, and make every hour count.</p>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="/register.html" id="startBtn">Start Swapping</a>
-        <a class="btn btn-secondary" href="/discover.html">Explore Skills</a>
+        <a class="btn btn-primary" href="/register.html" id="startBtn">Find your first swap <span aria-hidden="true">↗</span></a>
+        <a class="btn btn-secondary" href="/discover.html">Explore the community</a>
       </div>
+      <div class="hero-proof"><div class="proof-avatars"><span>✦</span><span>◎</span><span>◉</span><b>+</b></div><p><strong>Learn alongside your peers.</strong><br>Every expert was once a beginner.</p></div>
     </div>
-    <div class="hero-art" aria-hidden="true">
+    <div class="hero-art landing-art" aria-hidden="true">
+      <div class="art-note note-top"><span>✳</span><div><strong>Give a little</strong><small>Share what you know</small></div></div>
       <svg viewBox="0 0 520 420" width="100%" height="100%">
         <defs>
           <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="#6c5ce7"/>
-            <stop offset="100%" stop-color="#0984e3"/>
+            <stop offset="0%" stop-color="#f27d5c"/>
+            <stop offset="100%" stop-color="#bc513e"/>
           </linearGradient>
         </defs>
-        <circle cx="260" cy="210" r="150" fill="#f3f0ff"/>
+        <circle cx="260" cy="210" r="150" fill="#f8dfcb"/>
         <rect x="70" y="90" rx="28" width="160" height="210" fill="white" stroke="#e6e8f0"/>
         <circle cx="150" cy="150" r="28" fill="url(#g)"/>
-        <rect x="100" y="195" rx="8" width="100" height="10" fill="#ddd6fe"/>
-        <rect x="110" y="215" rx="8" width="80" height="10" fill="#cfe8ff"/>
+        <rect x="100" y="195" rx="8" width="100" height="10" fill="#e7c7aa"/>
+        <rect x="110" y="215" rx="8" width="80" height="10" fill="#f0d4bc"/>
         <rect x="290" y="120" rx="28" width="160" height="210" fill="white" stroke="#e6e8f0"/>
-        <circle cx="370" cy="180" r="28" fill="#0984e3"/>
-        <rect x="320" y="225" rx="8" width="100" height="10" fill="#cfe8ff"/>
-        <rect x="330" y="245" rx="8" width="80" height="10" fill="#ddd6fe"/>
+        <circle cx="370" cy="180" r="28" fill="#b76546"/>
+        <rect x="320" y="225" rx="8" width="100" height="10" fill="#f0d4bc"/>
+        <rect x="330" y="245" rx="8" width="80" height="10" fill="#e7c7aa"/>
         <path d="M230 210 C250 180, 270 240, 290 210" stroke="url(#g)" stroke-width="8" fill="none" stroke-linecap="round"/>
-        <circle cx="110" cy="70" r="22" fill="#fff" stroke="#ddd6fe"/>
-        <text x="102" y="76" font-size="18">💻</text>
-        <circle cx="410" cy="80" r="22" fill="#fff" stroke="#cfe8ff"/>
-        <text x="402" y="86" font-size="18">🎨</text>
+        <circle cx="110" cy="70" r="22" fill="#fff" stroke="#e7c7aa"/>
+        <text x="102" y="76" font-size="18">📐</text>
+        <circle cx="410" cy="80" r="22" fill="#fff" stroke="#f0d4bc"/>
+        <text x="402" y="86" font-size="18">⚛️</text>
         <circle cx="430" cy="330" r="22" fill="#fff"/>
-        <text x="422" y="336" font-size="18">📷</text>
+        <text x="422" y="336" font-size="18">💻</text>
         <circle cx="90" cy="330" r="22" fill="#fff"/>
-        <text x="82" y="336" font-size="18">🎤</text>
+        <text x="82" y="336" font-size="18">⚡</text>
       </svg>
+      <div class="art-note note-bottom"><span>↗</span><div><strong>Get a lot back</strong><small>Learn something new</small></div></div>
     </div>
   </section>
 
+  <section class="trust-strip"><span>Real people</span><i></i><span>Useful skills</span><i></i><span>Equal exchange</span><i></i><span>Room to grow</span></section>
+
   <section class="section alt" id="how">
     <div class="section-head">
-      <div class="kicker">Simple by design</div>
-      <h2>How SkillSwap Works</h2>
-      <p>Six steps from “I want to learn this” to a real skill exchange.</p>
+      <div class="kicker">A better way to learn</div>
+      <h2>Make room for a new skill.</h2>
+      <p>Bring something to share. Leave with something new. It's that simple.</p>
     </div>
     <div class="grid-3">
       <article class="card step-card"><div class="step-num">1</div><h3>Create your profile</h3><p>Tell people who you are and what you care about.</p></article>
@@ -68,25 +75,47 @@
 
   <section class="section" id="skills">
     <div class="section-head">
-      <h2>Popular Skills</h2>
-      <p>From code to camera — discover what people are exchanging right now.</p>
+      <div class="kicker">Start with what you're studying</div>
+      <h2>Your first year, together.</h2>
+      <p>Find a study partner for SPPU First Year Engineering (2024 Pattern).</p>
     </div>
+    <h3 style="text-align:center;margin-bottom:12px;color:var(--muted)">Semester 1</h3>
     <div class="grid-4">
-      <article class="card skill-card"><span>💻</span><strong>Web Development</strong></article>
-      <article class="card skill-card"><span>🎨</span><strong>Graphic Design</strong></article>
-      <article class="card skill-card"><span>🐍</span><strong>Python</strong></article>
-      <article class="card skill-card"><span>📷</span><strong>Photography</strong></article>
-      <article class="card skill-card"><span>🎤</span><strong>Public Speaking</strong></article>
-      <article class="card skill-card"><span>🎬</span><strong>Video Editing</strong></article>
-      <article class="card skill-card"><span>📈</span><strong>Digital Marketing</strong></article>
-      <article class="card skill-card"><span>📊</span><strong>Excel</strong></article>
+      <article class="card skill-card"><span>📐</span><strong>Engineering Mathematics-I</strong></article>
+      <article class="card skill-card"><span>⚛️</span><strong>Engineering Physics</strong></article>
+      <article class="card skill-card"><span>🧪</span><strong>Engineering Chemistry</strong></article>
+      <article class="card skill-card"><span>⚡</span><strong>Basic Electrical Engineering</strong></article>
+      <article class="card skill-card"><span>🔌</span><strong>Basic Electronics Engineering</strong></article>
+      <article class="card skill-card"><span>📏</span><strong>Engineering Graphics</strong></article>
+      <article class="card skill-card"><span>💻</span><strong>Fundamentals of Programming Languages</strong></article>
+      <article class="card skill-card"><span>🗣️</span><strong>Professional Communication Skills</strong></article>
     </div>
+    <h3 style="text-align:center;margin:24px 0 12px;color:var(--muted)">Semester 2</h3>
+    <div class="grid-4">
+      <article class="card skill-card"><span>🔢</span><strong>Engineering Mathematics-II</strong></article>
+      <article class="card skill-card"><span>⚙️</span><strong>Engineering Mechanics</strong></article>
+      <article class="card skill-card"><span>🖥️</span><strong>Programming and Problem Solving</strong></article>
+      <article class="card skill-card"><span>🔧</span><strong>Manufacturing Practice Workshop</strong></article>
+      <article class="card skill-card"><span>💡</span><strong>Design Thinking &amp; Idea Lab</strong></article>
+      <article class="card skill-card"><span>📜</span><strong>Indian Knowledge System</strong></article>
+      <article class="card skill-card"><span>🎯</span><strong>Co-Curricular Courses</strong></article>
+    </div>
+  </section>
+
+  <section class="section syllabus-section" id="syllabus">
+    <div class="section-head">
+      <div class="kicker">A clear path through the semester</div>
+      <h2>Explore the syllabus.</h2>
+      <p>Open any subject to browse its units and practical outline from the SPPU First Year Engineering 2024 Pattern syllabus.</p>
+    </div>
+    <div id="syllabusSubjects" class="syllabus-groups"></div>
   </section>
 
   <section class="section alt" id="why">
     <div class="section-head">
-      <h2>Why SkillSwap?</h2>
-      <p>A calmer way to grow — without paying for another course you never finish.</p>
+      <div class="kicker">Good company, genuine progress</div>
+      <h2>Learning works better together.</h2>
+      <p>A friendly, practical way to grow skills and share what you know.</p>
     </div>
     <div class="grid-auto">
       <article class="card why-card"><h3>Learn for free</h3><p>Trade time and knowledge instead of tuition.</p></article>
@@ -116,6 +145,7 @@
         <a href="/about.html">About</a>
         <a href="/discover.html">Discover</a>
         <a href="/index.html#how">How it works</a>
+        <a href="/index.html#syllabus">Syllabus</a>
       </div>
       <div>
         <h4>Company</h4>
@@ -130,7 +160,17 @@
     </div>
     <div class="copyright">© 2026 SkillSwap. Built for people who learn by doing.</div>
   </footer>
+  </main>
+  <div class="modal-bg syllabus-modal-bg" id="syllabusModal" role="dialog" aria-modal="true" aria-labelledby="syllabusModalTitle">
+    <section class="modal syllabus-modal">
+      <button class="syllabus-close" id="closeSyllabus" type="button" aria-label="Close syllabus">×</button>
+      <div class="kicker" id="syllabusModalMeta"></div>
+      <h2 id="syllabusModalTitle"></h2>
+      <div id="syllabusModalContent" class="syllabus-unit-list"></div>
+    </section>
+  </div>
   <script src="/js/app.js"></script>
+  <script src="/js/syllabus.js"></script>
   <script>
     if (getUser()) {
       document.getElementById('startBtn').href = '/dashboard.html';

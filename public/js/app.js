@@ -3,35 +3,55 @@ const USER_KEY = 'skillswap_user';
 
 const api = {
   async request(path, options = {}) {
-    const headers = { ...(options.headers || {}) };
+    const { timeoutMs, ...fetchOptions } = options;
+    const headers = { ...(fetchOptions.headers || {}) };
     const token = getToken();
-    if (!(options.body instanceof FormData)) {
+    if (!(fetchOptions.body instanceof FormData)) {
       headers['Content-Type'] = 'application/json';
     }
     if (token) headers.Authorization = `Bearer ${token}`;
 
     let res;
+    let data;
+    const controller = timeoutMs ? new AbortController() : null;
+    const timeout = controller ? setTimeout(() => controller.abort(), timeoutMs) : null;
     try {
-      res = await fetch(path, { ...options, headers });
-    } catch (_) {
+      res = await fetch(path, {
+        ...fetchOptions,
+        headers,
+        signal: controller?.signal || fetchOptions.signal
+      });
+      data = await res.json().catch((error) => {
+        if (error.name === 'AbortError') throw error;
+        return { success: false, message: 'Unexpected server response' };
+      });
+    } catch (error) {
+      if (error.name === 'AbortError') {
+        throw new Error('SkillSwap is taking longer than expected. Please try again.');
+      }
       throw new Error('Unable to reach SkillSwap. Check your connection.');
+    } finally {
+      if (timeout) clearTimeout(timeout);
     }
 
-    const data = await res.json().catch(() => ({ success: false, message: 'Unexpected server response' }));
     if (res.status === 401 && !path.includes('/api/auth/login')) {
       clearAuth();
       if (!location.pathname.endsWith('login.html')) {
         location.href = '/login.html';
       }
-      throw new Error(data.message || 'Session expired. Please login again.');
+      const error = new Error(data.message || 'Session expired. Please login again.');
+      error.status = 401;
+      throw error;
     }
     if (!res.ok || data.success === false) {
-      throw new Error(data.message || 'Something went wrong');
+      const error = new Error(data.message || 'Something went wrong');
+      error.status = res.status;
+      throw error;
     }
     return data;
   },
-  get(path) {
-    return this.request(path);
+  get(path, options = {}) {
+    return this.request(path, options);
   },
   post(path, body) {
     return this.request(path, { method: 'POST', body: body instanceof FormData ? body : JSON.stringify(body) });
@@ -81,7 +101,7 @@ function showAlert(el, message, type = 'error') {
 }
 
 function brandSvg() {
-  return `<span class="brand-mark">↻</span><span>SkillSwap</span>`;
+  return `<span class="brand-mark"><img src="/images/skillswap-mark.png" alt="" width="44" height="44"></span><span class="brand-name">SkillSwap</span>`;
 }
 
 function navHtml() {
@@ -93,15 +113,16 @@ function navHtml() {
         ['index.html', 'Home'],
         ['discover.html', 'Discover'],
         ['index.html#how', 'How It Works'],
+        ['index.html#syllabus', 'Syllabus'],
         ['about.html', 'About']
       ]
     : [
         ['dashboard.html', 'Dashboard'],
         ['discover.html', 'Discover'],
+        ['index.html#syllabus', 'Syllabus'],
         ['swaps.html', 'My Swaps'],
         ['requests.html', 'Requests'],
-        ['messages.html', 'Messages'],
-        ['wallet.html', 'Wallet']
+        ['messages.html', 'Messages']
       ];
 
   const links = left
@@ -117,9 +138,9 @@ function navHtml() {
   return `
     <a class="brand" href="${guest ? '/index.html' : '/dashboard.html'}">${brandSvg()}</a>
     <div class="nav-links">${links}</div>
-    <div class="nav-actions">${actions}</div>
+    <div class="nav-actions"><button type="button" class="theme-toggle" id="themeToggle" aria-label="Switch to dark mode" title="Switch to dark mode"><span class="theme-icon" aria-hidden="true">☾</span></button>${actions}</div>
     <button class="hamburger" id="menuBtn" aria-label="Menu">☰</button>
-    <div class="mobile-menu" id="mobileMenu">${links}${actions}</div>
+    <div class="mobile-menu" id="mobileMenu">${links}<div class="mobile-actions"><button type="button" class="theme-toggle" id="themeToggleMobile" aria-label="Switch to dark mode"><span class="theme-icon" aria-hidden="true">☾</span> Appearance</button>${actions}</div></div>
   `;
 }
 
@@ -128,6 +149,28 @@ function mountNav() {
   if (!nav) return;
   nav.className = 'app-nav';
   nav.innerHTML = navHtml();
+  const themeKey = 'skillswap_theme';
+  const applyTheme = (theme) => {
+    document.documentElement.dataset.theme = theme;
+    localStorage.setItem(themeKey, theme);
+    nav.querySelectorAll('.brand-mark img').forEach((img) => {
+      img.src = theme === 'dark' ? '/images/skillswap-mark-dark.png' : '/images/skillswap-mark.png';
+    });
+    document.querySelectorAll('link[rel="icon"]').forEach((icon) => {
+      icon.href = theme === 'dark' ? '/images/favicon-dark.png' : '/images/favicon.png';
+    });
+    nav.querySelectorAll('.theme-toggle').forEach((button) => {
+      const dark = theme === 'dark';
+      button.setAttribute('aria-label', `Switch to ${dark ? 'light' : 'dark'} mode`);
+      button.title = `Switch to ${dark ? 'light' : 'dark'} mode`;
+      const icon = button.querySelector('.theme-icon');
+      if (icon) icon.textContent = dark ? '☀' : '☾';
+    });
+  };
+  applyTheme(localStorage.getItem(themeKey) || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
+  nav.querySelectorAll('.theme-toggle').forEach((button) => button.addEventListener('click', () => {
+    applyTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark');
+  }));
   const logout = nav.querySelectorAll('#logoutBtn');
   logout.forEach((btn) =>
     btn.addEventListener('click', () => {
@@ -158,7 +201,7 @@ function userCard(user, { showRequest = true } = {}) {
         <div>
           <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap">
             <strong>${user.name}</strong>
-            ${user.isErpVerified !== false ? `<span class="badge" style="background:#e0f2fe;color:#0369a1;font-size:0.7rem;padding:2px 7px">🎓 ERP Verified</span>` : ''}
+            ${user.isErpVerified !== false ? `<span class="badge verify-badge" style="font-size:0.7rem;padding:2px 7px">🎓 ERP Verified</span>` : ''}
           </div>
           <div style="color:var(--muted);font-size:0.88rem">@${user.username}${user.erpId ? ` · ${user.erpId}` : ''}</div>
           <div class="stars">⭐ ${Number(user.rating || 0).toFixed(1)}</div>
@@ -184,6 +227,21 @@ async function refreshMe() {
   const data = await api.get('/api/auth/me');
   localStorage.setItem(USER_KEY, JSON.stringify(data.user));
   return data.user;
+}
+
+async function getWithRetry(path, retries = 1, timeoutMs = null) {
+  let lastError;
+  for (let attempt = 0; attempt <= retries; attempt += 1) {
+    try {
+      return await api.get(path, timeoutMs ? { timeoutMs } : {});
+    } catch (error) {
+      lastError = error;
+      const retryable = !error.status || error.status === 408 || error.status === 429 || error.status >= 500;
+      if (!retryable || attempt === retries) throw error;
+      await new Promise((resolve) => setTimeout(resolve, 300 * (attempt + 1)));
+    }
+  }
+  throw lastError;
 }
 
 document.addEventListener('DOMContentLoaded', () => {

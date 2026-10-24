@@ -9,25 +9,24 @@ const Transaction = require('./models/Transaction');
 const { avatarUrl } = require('./utils/helpers');
 
 const skillsData = [
-  { name: 'JavaScript', category: 'Technology', description: 'Build interactive web apps with modern JS.', icon: '🟨' },
-  { name: 'Python', category: 'Technology', description: 'Data, automation, and backend development.', icon: '🐍' },
-  { name: 'Java', category: 'Technology', description: 'Object-oriented programming and enterprise apps.', icon: '☕' },
-  { name: 'React', category: 'Technology', description: 'Component-driven user interfaces.', icon: '⚛️' },
-  { name: 'Node.js', category: 'Technology', description: 'Server-side JavaScript and APIs.', icon: '🟢' },
-  { name: 'Web Development', category: 'Technology', description: 'HTML, CSS, and full-stack websites.', icon: '💻' },
-  { name: 'Graphic Design', category: 'Design', description: 'Visual identity, layouts, and branding.', icon: '🎨' },
-  { name: 'UI/UX', category: 'Design', description: 'Product design, wireframes, and research.', icon: '🧩' },
-  { name: 'Photoshop', category: 'Design', description: 'Photo editing and digital compositing.', icon: '🖼️' },
-  { name: 'Video Editing', category: 'Design', description: 'Storytelling with Premiere, CapCut, or DaVinci.', icon: '🎬' },
-  { name: 'Marketing', category: 'Business', description: 'Campaigns, growth, and brand strategy.', icon: '📣' },
-  { name: 'Entrepreneurship', category: 'Business', description: 'Starting and scaling a business.', icon: '🚀' },
-  { name: 'Excel', category: 'Business', description: 'Spreadsheets, formulas, and dashboards.', icon: '📊' },
-  { name: 'Public Speaking', category: 'Business', description: 'Presentations, confidence, and storytelling.', icon: '🎤' },
-  { name: 'Photography', category: 'Creative', description: 'Portraits, lighting, and composition.', icon: '📷' },
-  { name: 'Music', category: 'Creative', description: 'Instruments, production, or music theory.', icon: '🎵' },
-  { name: 'Drawing', category: 'Creative', description: 'Sketching, illustration, and visual art.', icon: '✏️' },
-  { name: 'Writing', category: 'Creative', description: 'Copywriting, storytelling, and editing.', icon: '✍️' },
-  { name: 'Digital Marketing', category: 'Business', description: 'SEO, ads, and content marketing.', icon: '📈' }
+  // ── Semester 1 Subjects ──
+  { name: 'Engineering Mathematics-I', category: 'Semester 1', description: 'Differential calculus, successive differentiation, Taylor & Maclaurin series, partial differentiation, complex numbers, and matrices.', icon: '📐' },
+  { name: 'Engineering Physics', category: 'Semester 1', description: 'Interference, diffraction, polarization, laser, fiber optics, quantum mechanics, and semiconductor physics.', icon: '⚛️' },
+  { name: 'Engineering Chemistry', category: 'Semester 1', description: 'Water chemistry, polymers, electrochemistry, corrosion, fuels & combustion, and spectroscopic techniques.', icon: '🧪' },
+  { name: 'Basic Electrical Engineering', category: 'Semester 1', description: 'DC & AC circuits, network theorems, single-phase & three-phase systems, transformers, electrical machines, and electrical safety.', icon: '⚡' },
+  { name: 'Basic Electronics Engineering', category: 'Semester 1', description: 'Semiconductor diodes, BJT & FET, operational amplifiers, digital electronics, logic gates, and number systems.', icon: '🔌' },
+  { name: 'Engineering Graphics', category: 'Semester 1', description: 'Orthographic projections, projection of points, lines & planes, projection of solids, sections, and isometric views.', icon: '📏' },
+  { name: 'Fundamentals of Programming Languages', category: 'Semester 1', description: 'C programming fundamentals — data types, operators, control structures, arrays, strings, functions, pointers, structures, and file handling.', icon: '💻' },
+  { name: 'Professional Communication Skills', category: 'Semester 1', description: 'Technical writing, presentation skills, group discussion, listening skills, and professional correspondence.', icon: '🗣️' },
+
+  // ── Semester 2 Subjects ──
+  { name: 'Engineering Mathematics-II', category: 'Semester 2', description: 'Integral calculus, definite integrals, beta & gamma functions, differential equations, Laplace transforms, and Fourier series.', icon: '🔢' },
+  { name: 'Engineering Mechanics', category: 'Semester 2', description: 'Coplanar force systems, equilibrium, friction, centroid & moment of inertia, kinematics, and kinetics of particles.', icon: '⚙️' },
+  { name: 'Programming and Problem Solving', category: 'Semester 2', description: 'Advanced C/C++ programming — OOP concepts, dynamic memory allocation, data structures (linked lists, stacks, queues), searching & sorting algorithms.', icon: '🖥️' },
+  { name: 'Manufacturing Practice Workshop', category: 'Semester 2', description: 'Fitting, carpentry, welding, sheet metal work, smithy, plumbing, and hands-on manufacturing processes.', icon: '🔧' },
+  { name: 'Design Thinking & Idea Lab', category: 'Semester 2', description: 'Design thinking methodology — empathize, define, ideate, prototype, test — innovation, brainstorming, and project-based learning.', icon: '💡' },
+  { name: 'Indian Knowledge System', category: 'Semester 2', description: 'Ancient Indian contributions to science, mathematics, astronomy, metallurgy, architecture, and holistic knowledge traditions.', icon: '📜' },
+  { name: 'Co-Curricular Courses', category: 'Semester 2', description: 'NSS, sports, cultural activities, community service, and soft skill development for holistic student growth.', icon: '🎯' }
 ];
 
 const demoPassword = 'Password123';
@@ -38,10 +37,10 @@ const usersData = [
     username: 'anchal',
     email: 'anchal@skillswap.dev',
     erpId: 'ERP202601',
-    bio: 'Full-stack developer passionate about web architectures and peer teaching.',
+    bio: 'Strong in maths and programming, happy to help peers with Sem 1 & Sem 2 topics.',
     location: 'Pune',
-    teach: ['Web Development', 'JavaScript', 'React', 'Node.js'],
-    learn: ['UI/UX', 'Public Speaking'],
+    teach: ['Engineering Mathematics-I', 'Fundamentals of Programming Languages', 'Engineering Mathematics-II', 'Programming and Problem Solving'],
+    learn: ['Engineering Physics', 'Engineering Graphics'],
     rating: 4.9
   },
   {
@@ -49,10 +48,10 @@ const usersData = [
     username: 'gargi',
     email: 'gargi@skillswap.dev',
     erpId: 'ERP202602',
-    bio: 'UI/UX and product designer crafting intuitive digital experiences.',
+    bio: 'Love design and creativity — can teach graphics and design thinking to anyone!',
     location: 'Mumbai',
-    teach: ['UI/UX', 'Graphic Design', 'Photoshop'],
-    learn: ['React', 'Web Development'],
+    teach: ['Engineering Graphics', 'Design Thinking & Idea Lab', 'Professional Communication Skills'],
+    learn: ['Engineering Mathematics-I', 'Basic Electrical Engineering'],
     rating: 4.9
   },
   {
@@ -60,10 +59,10 @@ const usersData = [
     username: 'shreya',
     email: 'shreya@skillswap.dev',
     erpId: 'ERP202603',
-    bio: 'Data enthusiast and Python developer focused on clean scripts and analytics.',
+    bio: 'Physics and chemistry nerd — always excited to explain tricky concepts.',
     location: 'Bengaluru',
-    teach: ['Python', 'Excel', 'Java'],
-    learn: ['JavaScript', 'React'],
+    teach: ['Engineering Physics', 'Engineering Chemistry', 'Engineering Mechanics'],
+    learn: ['Fundamentals of Programming Languages', 'Programming and Problem Solving'],
     rating: 4.8
   },
   {
@@ -71,10 +70,10 @@ const usersData = [
     username: 'shravani',
     email: 'shravani@skillswap.dev',
     erpId: 'ERP202604',
-    bio: 'Digital marketer and creative strategist specializing in growth and public speaking.',
+    bio: 'Electrical and electronics geek who loves hands-on workshop practice.',
     location: 'Delhi',
-    teach: ['Public Speaking', 'Digital Marketing', 'Marketing'],
-    learn: ['Python', 'Video Editing'],
+    teach: ['Basic Electrical Engineering', 'Basic Electronics Engineering', 'Manufacturing Practice Workshop'],
+    learn: ['Engineering Mathematics-II', 'Engineering Chemistry'],
     rating: 4.7
   }
 ];
@@ -124,40 +123,40 @@ async function seedData() {
   const accepted = await SwapRequest.create({
     sender: anchal._id,
     receiver: gargi._id,
-    skillOffered: byName['Web Development'],
-    skillWanted: byName['UI/UX'],
-    message: 'Happy to swap React/web fundamentals for a UX design portfolio review.',
+    skillOffered: byName['Engineering Mathematics-I'],
+    skillWanted: byName['Engineering Graphics'],
+    message: 'Happy to walk you through calculus and matrices if you help me with projection drawings.',
     status: 'accepted'
   });
 
   await SwapRequest.create({
     sender: shreya._id,
     receiver: anchal._id,
-    skillOffered: byName.Python,
-    skillWanted: byName.JavaScript,
-    message: 'I can walk you through Python data structures if you help me with JavaScript.',
+    skillOffered: byName['Engineering Physics'],
+    skillWanted: byName['Fundamentals of Programming Languages'],
+    message: 'I can explain optics and quantum mechanics if you help me with C programming.',
     status: 'pending'
   });
 
   await SwapRequest.create({
     sender: shravani._id,
     receiver: gargi._id,
-    skillOffered: byName['Digital Marketing'],
-    skillWanted: byName['Graphic Design'],
-    message: 'Would love a branding session in exchange for growth marketing strategy.',
+    skillOffered: byName['Basic Electrical Engineering'],
+    skillWanted: byName['Design Thinking & Idea Lab'],
+    message: 'Would love a design thinking session in exchange for circuit analysis help.',
     status: 'pending'
   });
 
   await Message.create({
     sender: anchal._id,
     receiver: gargi._id,
-    text: 'Hey Gargi! Excited to swap web development and UI/UX skills this week.',
+    text: 'Hey Gargi! Excited to swap Engineering Maths-I and Engineering Graphics this week.',
     timestamp: new Date(Date.now() - 1000 * 60 * 60)
   });
   await Message.create({
     sender: gargi._id,
     receiver: anchal._id,
-    text: 'Hey Anchal! Sounds great — let us review the user interface and components on Thursday.',
+    text: 'Hey Anchal! Sounds great — let us go over projections and isometric views on Thursday.',
     timestamp: new Date(Date.now() - 1000 * 60 * 40)
   });
 

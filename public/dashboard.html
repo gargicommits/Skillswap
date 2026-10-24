@@ -3,26 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="/images/favicon.png" />
   <title>Dashboard — SkillSwap</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/css/style.css" />
 </head>
 <body>
   <nav id="appNav"></nav>
-  <main class="page">
+  <main class="page dashboard-page">
+    <div class="dashboard-intro"><div class="kicker">A little progress, every day</div>
     <h1 class="page-title" id="welcome">Welcome back</h1>
     <p class="page-sub">Your matches, credits, and activity in one place.</p>
-    <section class="card credit-hero" id="creditHero">
+    </div>
+    <section class="card credit-hero dashboard-credit" id="creditHero">
       <div>
-        <div class="kicker" style="color:#ddd6fe">Balance</div>
+        <div class="kicker">Your balance</div>
         <h2>💎 0 Skill Credits</h2>
+        <p>Share a skill today. Save credits for something new.</p>
       </div>
-      <a class="btn" href="/wallet.html" style="background:white;color:var(--primary)">Open wallet</a>
     </section>
     <div class="stat-grid" id="stats"></div>
-    <h2>Recommended matches</h2>
-    <p class="page-sub">People whose teaching skills match what you want to learn.</p>
+    <div class="matches-heading"><div class="kicker">Your next learning partner</div><h2>Recommended matches</h2>
+    <p class="page-sub">People whose teaching skills match what you want to learn.</p></div>
     <div id="matches" class="grid-auto"><div class="loading">Loading matches...</div></div>
   </main>
   <script src="/js/app.js"></script>

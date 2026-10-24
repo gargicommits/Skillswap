@@ -1,10 +1,10 @@
 const express = require('express');
-const { protect } = require('../middleware/authMiddleware');
+const { protectWallet } = require('../middleware/authMiddleware');
 const { wallet, transactions } = require('../controllers/transactionController');
 
 const router = express.Router();
 
-router.get('/wallet', protect, wallet);
-router.get('/transactions', protect, transactions);
+router.get('/wallet', protectWallet, wallet);
+router.get('/transactions', protectWallet, transactions);
 
 module.exports = router;

@@ -1,17 +1,12 @@
 const Transaction = require('../models/Transaction');
-const User = require('../models/User');
-
-async function wallet(req, res, next) {
-  try {
-    const user = await User.findById(req.user._id).select('credits name');
-    res.json({
-      success: true,
-      credits: user.credits,
-      user: { name: user.name, credits: user.credits }
-    });
-  } catch (error) {
-    next(error);
-  }
+function wallet(req, res) {
+  // protectWallet has already loaded the account. Do not make the balance
+  // depend on a second user lookup or the slower, independent history query.
+  res.json({
+    success: true,
+    credits: req.user.credits,
+    user: { name: req.user.name, credits: req.user.credits }
+  });
 }
 
 async function transactions(req, res, next) {

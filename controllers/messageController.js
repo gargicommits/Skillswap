@@ -99,6 +99,9 @@ async function conversations(req, res, next) {
     const people = [];
     const seen = new Set();
     for (const swap of swaps) {
+      // Skip stale swap records whose related user was removed. One incomplete
+      // relation should not make the entire inbox fail to open.
+      if (!swap.sender?._id || !swap.receiver?._id) continue;
       const other = String(swap.sender._id) === String(req.user._id) ? swap.receiver : swap.sender;
       const key = String(other._id);
       if (seen.has(key)) continue;

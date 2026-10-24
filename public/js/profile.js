@@ -1,16 +1,37 @@
 document.addEventListener('DOMContentLoaded', async () => {
   if (!requireAuth()) return;
+  const retryRequest = async (request, retries = 2) => {
+    let lastError;
+    for (let attempt = 0; attempt <= retries; attempt += 1) {
+      try {
+        return await request();
+      } catch (error) {
+        lastError = error;
+        if (attempt < retries) await new Promise((resolve) => setTimeout(resolve, 350 * (attempt + 1)));
+      }
+    }
+    throw lastError;
+  };
   const params = new URLSearchParams(location.search);
   const id = params.get('id');
   const root = document.getElementById('profileRoot');
   const alertBox = document.getElementById('alert');
-  const me = await refreshMe();
-  mountNav();
+  let me;
+  try {
+    me = await retryRequest(() => refreshMe());
+  } catch (_) {
+    me = null;
+  }
+  me = me || getUser();
+  if (!me) {
+    root.innerHTML = emptyState('Please sign in again', 'Your session could not be restored. Log in and open the profile again.');
+    return;
+  }
   const isSelf = !id || id === me._id;
 
   let profile;
   try {
-    profile = isSelf ? me : (await api.get(`/api/users/${id}`)).user;
+    profile = isSelf ? me : (await retryRequest(() => api.get(`/api/users/${encodeURIComponent(id)}`))).user;
   } catch (err) {
     root.innerHTML = emptyState('Profile unavailable', err.message);
     return;
@@ -207,5 +228,11 @@ document.addEventListener('DOMContentLoaded', async () => {
   });
 
   render();
-  if (isSelf) await loadCatalog();
+  if (isSelf) {
+    try {
+      await loadCatalog();
+    } catch (err) {
+      showAlert(alertBox, `Profile loaded, but skills could not be refreshed: ${err.message}`);
+    }
+  }
 });

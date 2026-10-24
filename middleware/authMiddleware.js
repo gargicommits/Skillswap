@@ -9,8 +9,14 @@ async function protect(req, res, next) {
     return res.status(401).json({ success: false, message: 'Session expired. Please login again.' });
   }
 
+  let decoded;
   try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    decoded = jwt.verify(token, process.env.JWT_SECRET);
+  } catch (_) {
+    return res.status(401).json({ success: false, message: 'Session expired. Please login again.' });
+  }
+
+  try {
     const user = await User.findById(decoded.id)
       .select('-password')
       .populate('skillsToTeach')
@@ -23,7 +29,9 @@ async function protect(req, res, next) {
     req.user = user;
     next();
   } catch (error) {
-    return res.status(401).json({ success: false, message: 'Session expired. Please login again.' });
+    // Database errors are server failures, not invalid sessions. Returning 401
+    // here makes the client erase a valid token during a temporary DB outage.
+    next(error);
   }
 }
 
@@ -47,4 +55,33 @@ function optionalAuth(req, res, next) {
   });
 }
 
-module.exports = { protect, optionalAuth };
+async function protectWallet(req, res, next) {
+  const header = req.headers.authorization || '';
+  const token = header.startsWith('Bearer ') ? header.slice(7) : null;
+
+  if (!token) {
+    return res.status(401).json({ success: false, message: 'Session expired. Please login again.' });
+  }
+
+  let decoded;
+  try {
+    decoded = jwt.verify(token, process.env.JWT_SECRET);
+  } catch (_) {
+    return res.status(401).json({ success: false, message: 'Session expired. Please login again.' });
+  }
+
+  try {
+    // Wallet requests only need account identity and credits. Avoid populating
+    // the user's skill lists on every balance or transaction-history request.
+    const user = await User.findById(decoded.id).select('-password');
+    if (!user) {
+      return res.status(401).json({ success: false, message: 'Session expired. Please login again.' });
+    }
+    req.user = user;
+    next();
+  } catch (error) {
+    next(error);
+  }
+}
+
+module.exports = { protect, protectWallet, optionalAuth };

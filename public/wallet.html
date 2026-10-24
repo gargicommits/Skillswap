@@ -3,23 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="/images/favicon.png" />
   <title>Wallet — SkillSwap</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/css/style.css" />
 </head>
 <body>
   <nav id="appNav"></nav>
-  <main class="page">
-    <h1 class="page-title">Wallet</h1>
-    <section class="card credit-hero" id="balance">
-      <div>
-        <div class="kicker" style="color:#ddd6fe">Current balance</div>
+  <main class="page wallet-page">
+    <header class="wallet-heading">
+      <div class="kicker">Your SkillSwap account</div>
+      <h1 class="page-title">Your learning<br><em>has value.</em></h1>
+      <p class="page-sub">Every skill you share helps you earn credits for your next learning session.</p>
+    </header>
+    <section class="card credit-hero wallet-balance" id="balance">
+      <div class="balance-copy">
+        <div class="kicker">Available to exchange</div>
         <h2>💎 0 Skill Credits</h2>
+        <p>Credits are your thank-you for sharing what you know.</p>
       </div>
+      <div class="balance-art" aria-hidden="true"><span>✳</span><b>↗</b><i></i></div>
+      <a class="btn wallet-discover" href="/discover.html">Find a skill to learn <span aria-hidden="true">↗</span></a>
     </section>
-    <h2 style="margin:24px 0 8px">Transaction history</h2>
-    <div class="card" id="tx"><div class="loading">Loading transactions...</div></div>
+    <section class="wallet-history">
+      <div class="history-heading"><div><div class="kicker">Your activity</div><h2>Credit history</h2></div><p>See how your learning journey adds up.</p></div>
+      <div class="card wallet-transactions" id="tx"><div class="loading">Loading transactions...</div></div>
+    </section>
   </main>
   <script src="/js/app.js"></script>
   <script src="/js/wallet.js"></script>

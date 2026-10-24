@@ -1,16 +1,29 @@
 document.addEventListener('DOMContentLoaded', async () => {
   if (!requireAuth()) return;
-  const me = await refreshMe();
   const convosEl = document.getElementById('convos');
   const log = document.getElementById('chatLog');
   const head = document.getElementById('chatHead');
+  // The signed-in user's id is already cached at login; don't block opening the
+  // inbox on a separate profile refresh request.
+  const me = getUser();
+  if (!me) {
+    convosEl.innerHTML = emptyState('Messages could not load', 'Please refresh the page in a moment.');
+    head.textContent = 'Messages unavailable';
+    return;
+  }
   const params = new URLSearchParams(location.search);
   let currentId = params.get('with');
   let poll;
+  let pollBusy = false;
+  let conversationVersion = 0;
+  let threadVersion = 0;
 
   async function loadConvos() {
+    const requestVersion = ++conversationVersion;
     try {
-      const { conversations } = await api.get('/api/messages');
+      const data = await getWithRetry('/api/messages');
+      const conversations = (data.conversations || []).filter((conversation) => conversation?.user?._id);
+      if (requestVersion !== conversationVersion) return window.__convos || [];
       window.__convos = conversations || [];
       if (!conversations.length) {
         convosEl.innerHTML = emptyState('No conversations yet.', 'Accept a swap to unlock messaging.');
@@ -22,8 +35,8 @@ document.addEventListener('DOMContentLoaded', async () => {
           return `<button class="convo ${c.user._id === currentId ? 'active' : ''}" data-id="${c.user._id}">
             <img class="avatar" src="${avatarSrc(c.user)}" alt="">
             <div style="text-align:left">
-              <strong>${c.user.name}</strong>
-              <div style="color:var(--muted);font-size:.85rem">${preview.slice(0, 42)}</div>
+            <strong>${escapeMessageHtml(c.user.name)}</strong>
+              <div style="color:var(--muted);font-size:.85rem">${escapeMessageHtml(preview.slice(0, 42))}</div>
             </div>
             ${c.unread ? `<span class="match-pill">${c.unread}</span>` : ''}
           </button>`;
@@ -32,13 +45,14 @@ document.addEventListener('DOMContentLoaded', async () => {
       convosEl.querySelectorAll('.convo').forEach((btn) => {
         btn.addEventListener('click', () => {
           currentId = btn.dataset.id;
-          history.replaceState({}, '', `/messages.html?with=${currentId}`);
+          history.replaceState({}, '', `/messages.html?with=${encodeURIComponent(currentId)}`);
           loadThread();
           loadConvos();
         });
       });
       return conversations;
     } catch (err) {
+      if (requestVersion !== conversationVersion) return window.__convos || [];
       convosEl.innerHTML = emptyState('Unable to load conversations', err.message);
       return [];
     }
@@ -46,11 +60,15 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   async function loadThread() {
     if (!currentId) return;
+    const requestedId = currentId;
+    const requestVersion = ++threadVersion;
     log.innerHTML = '<div class="loading">Loading messages...</div>';
     try {
-      const { messages } = await api.get(`/api/messages/${currentId}`);
+      const data = await getWithRetry(`/api/messages/${encodeURIComponent(requestedId)}`);
+      if (requestVersion !== threadVersion || requestedId !== currentId) return;
+      const messages = data.messages || [];
       let other = messages[0]
-        ? String(messages[0].sender._id) === String(me._id)
+        ? String(messages[0].sender?._id || messages[0].sender) === String(me._id)
           ? messages[0].receiver
           : messages[0].sender
         : null;
@@ -61,11 +79,12 @@ document.addEventListener('DOMContentLoaded', async () => {
           other = found.user;
         } else {
           try {
-            const uRes = await api.get(`/api/users/${currentId}`);
+            const uRes = await getWithRetry(`/api/users/${encodeURIComponent(requestedId)}`);
             other = uRes.user;
           } catch (_) {}
         }
       }
+      if (requestVersion !== threadVersion || requestedId !== currentId) return;
 
       head.textContent = other ? other.name : 'Conversation';
       if (!messages.length) {
@@ -74,14 +93,15 @@ document.addEventListener('DOMContentLoaded', async () => {
       }
       log.innerHTML = messages
         .map((m) => {
-          const mine = String(m.sender._id) === String(me._id);
-          return `<div class="bubble ${mine ? 'mine' : ''}">${m.text}<div style="font-size:.72rem;opacity:.75">${new Date(
+          const mine = String(m.sender?._id || m.sender) === String(me._id);
+          return `<div class="bubble ${mine ? 'mine' : ''}">${escapeMessageHtml(m.text)}<div style="font-size:.72rem;opacity:.75">${new Date(
             m.timestamp
           ).toLocaleTimeString()}</div></div>`;
         })
         .join('');
       log.scrollTop = log.scrollHeight;
     } catch (err) {
+      if (requestVersion !== threadVersion || requestedId !== currentId) return;
       log.innerHTML = emptyState('Unable to open chat', err.message);
     }
   }
@@ -111,8 +131,22 @@ document.addEventListener('DOMContentLoaded', async () => {
   if (currentId) await loadThread();
 
   poll = setInterval(() => {
-    if (currentId) loadThread();
-    loadConvos();
-  }, 4000);
+    if (document.hidden || pollBusy) return;
+    pollBusy = true;
+    Promise.resolve()
+      .then(loadConvos)
+      .then(() => (currentId ? loadThread() : null))
+      .finally(() => { pollBusy = false; });
+  }, 5000);
   window.addEventListener('beforeunload', () => clearInterval(poll));
 });
+
+function escapeMessageHtml(value) {
+  return String(value ?? '').replace(/[&<>"']/g, (character) => ({
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#39;'
+  })[character]);
+}

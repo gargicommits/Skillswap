@@ -4,7 +4,7 @@ const Skill = require('../models/Skill');
 const createValidators = [
   body('name').trim().notEmpty().withMessage('Skill name is required'),
   body('category')
-    .isIn(['Technology', 'Design', 'Business', 'Creative'])
+    .isIn(['Semester 1', 'Semester 2'])
     .withMessage('Please choose a valid category'),
   body('description').optional().trim(),
   body('icon').optional().trim()
